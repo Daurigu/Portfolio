@@ -18,9 +18,11 @@ from django.urls import path, include
 
 import Start
 import Tech
+import Creative
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/start/', include('Start.urls')),
-    path('api/tech/', include('Tech.urls'))
+    path('api/tech/', include('Tech.urls')),
+    path('api/creative/', include('Creative.urls'))
 ]
