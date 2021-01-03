@@ -4,5 +4,6 @@ from django.urls import path
 from Creative.views import CreativeView, CreativeSectionView
 
 urlpatterns = [
-    path('', CreativeSectionView.as_view()),
+    path('section/', CreativeSectionView.as_view()),
+    path('card/', CreativeView.as_view()),
 ]

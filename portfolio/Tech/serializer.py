@@ -5,9 +5,9 @@ from Tech.models import TechModel, TechSectionModel
 class TechSerializer(serializers.ModelSerializer):
     class Meta:
         model = TechModel
-        fields = ['id', 'section', 'description']
+        fields = ['section', 'description']
 
 class TechSectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = TechSectionModel
-        fields = ['id', 'section', 'name', 'description', 'image']
+        fields = ['section', 'name', 'description', 'image', 'link']

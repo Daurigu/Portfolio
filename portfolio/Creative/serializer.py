@@ -11,4 +11,4 @@ class CreativeSectionSerializer(serializers.ModelSerializer):
 class CreativeSerializer(serializers.ModelSerializer):
     class Meta:
         model = CreativeModel
-        fields = '__all__'
+        fields = ['section', 'name', 'description', 'image', 'link']

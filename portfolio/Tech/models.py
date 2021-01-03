@@ -14,6 +14,7 @@ class TechModel(models.Model):
     name = models.CharField(max_length = 40)
     description = models.CharField(max_length = 400)
     image = models.CharField(max_length = 600)
+    link = models.CharField(max_length = 400, default=None)
 
     def __str__(self):
         return self.name
