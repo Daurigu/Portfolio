@@ -6,7 +6,7 @@ from Creative.models import CreativeModel, CreativeSectionModel
 class CreativeSectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = CreativeSectionModel
-        fields = ['section', 'description']
+        fields = ['id', 'section', 'description']
 
 class CreativeSerializer(serializers.ModelSerializer):
     class Meta:
