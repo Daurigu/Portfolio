@@ -44,9 +44,9 @@ function Creative(){
     }
 
     return(
-        <div>
-            {outputRender}
-        </div>
+      <div className='row justify-content-md-center'>
+          {outputRender}
+      </div>
     )
 }
 

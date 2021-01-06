@@ -1,10 +1,12 @@
 import React from 'react'
 
 function Sections(props){
+
+
     return(
-        <div>
-            <h1>{props.section}</h1>
-            <p>{props.description}</p>
+        <div className='mt-5'>
+            <h1 className='text-success'>{props.section}</h1>
+            <p className='text-secondary'>{props.description}</p>
         </div>
     )
 }
