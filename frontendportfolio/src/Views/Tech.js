@@ -28,20 +28,20 @@ function Tech(){
     }, [] )
 
     // MERGE SECTIONS WITH CARDS
-    if(sections){
-      sections.map(element => {
-        outputRender.push(<Sections section={element.section} description={element.description}/>)
-        if(cards){
-          cards.map( card => {
-            if (card.section === element.id){
-              return outputRender.push(<Card image={card.image} name = {card.name} description={card.description} link={card.link}/>)
-            }
-            return 0
-          })
+if(sections){
+  sections.map(element => {
+    outputRender.push(<Sections section={element.section} description={element.description}/>)
+    if(cards){
+      cards.map( card => {
+        if (card.section === element.id){
+          return outputRender.push(<Card image={card.image} name = {card.name} description={card.description} link={card.link} type='1'/>)
         }
-      return outputRender
+        return 0
       })
     }
+  return outputRender
+  })
+}
 
     return(
         <div className='row justify-content-md-center'>

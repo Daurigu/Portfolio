@@ -4,7 +4,7 @@ function Sections(props){
 
 
     return(
-        <div className='mt-5'>
+        <div className='mt-5 p-5'>
             <h1 className='text-success'>{props.section}</h1>
             <p className='text-secondary'>{props.description}</p>
         </div>

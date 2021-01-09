@@ -17,22 +17,50 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <style>
-    .body {
-      font-family: 'Courier New', monospace;
-    }
-    .cardWidth{
-      width: 20rem;
-    }
-    .wrapper{
-      height: 100%; /* Full-height: remove this if you want "auto" height */
-      width: 160px; /* Set the width of the sidebar */
-      position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-      z-index: 1; /* Stay on top */
-      top: 0; /* Stay at the top */
-      left: 0;
-      overflow-x: hidden; /* Disable horizontal scroll */
-      padding-top: 20px;
-    }
+      .body {
+        font-family: 'Courier New', monospace;
+        background: rgb(202,255,218);
+        background: linear-gradient(90deg, rgba(202,255,218,1) 0%, rgba(255,255,255,0.8856676459646359) 15%, rgba(255,255,255,1) 100%); 
+      }
+      .cardWidth{
+        width: 20rem;
+      }
+      .wrapper{
+        height: 100%; /* Full-height: remove this if you want "auto" height */
+        /*width: 160px; /* Set the width of the sidebar */
+        /*position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+        /*z-index: 1; /* Stay on top */
+        /*top: 0; /* Stay at the top
+        left: 0;*/
+        /*overflow-x: hidden; /* Disable horizontal scroll */
+        /*padding-top: 20px;*/
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          position: fixed;
+          height: 100px;
+          bottom: 0;
+          width: 100%;
+          }
+      }
+      #override-btn-outline-success{
+        border: 1px solid transparent;
+      }
+      #idUlUno{
+        padding-left: 5px;
+        top: 30%
+      }
+      #idUlDos{
+        top: 30%
+      }
+      .imgBlur {
+        -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+        filter: blur(5px);
+      }
+      #overlay{
+        background: rgb(0, 0, 0);
+        background: linear-gradient(151deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+      }
     </style>
 
     <!--
@@ -45,6 +73,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Daniel Uribe</title>
   </head>
   <body class='body'>
@@ -64,6 +93,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-
-  </body>
 </html>

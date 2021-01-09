@@ -34,7 +34,7 @@ function Creative(){
         if(cards){
           cards.map( card => {
             if (card.section === element.id){
-              return outputRender.push(<Card image={card.image} name = {card.name} description={card.description} link={card.link}/>)
+              return outputRender.push(<Card image={card.image} name = {card.name} description={card.description} link={card.link} type='1'/>)
             }
             return 0
           })
