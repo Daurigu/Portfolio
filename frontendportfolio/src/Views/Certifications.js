@@ -27,8 +27,15 @@ function Certifications(){
     }
 
     return(
-        <div>
-           {showContent === null ? 'Loading...' : showContent}
+        <div className="mt-5 pt-5">
+          <div className="p-5">
+            <h1 className='text-success'>Certifications</h1>
+            <p className='text-secondary'>Click any of the certifications to get the full information</p>
+          </div>
+          <div className="row mt-5 justify-content-md-center">
+            {showContent === null ? 'Loading...' : showContent}
+          </div>
+          
         </div>
     )
 }

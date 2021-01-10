@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class TechSectionModel(models.Model):
     section = models.CharField(max_length = 40)
-    description = models.CharField(max_length = 500)
+    description = models.CharField(max_length = 500, blank=True)
     owner = models.ForeignKey('auth.user', related_name='TechModel', on_delete=models.CASCADE, default=None)
     
     def __str__(self):

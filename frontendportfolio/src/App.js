@@ -28,21 +28,23 @@ function App() {
               <div className='col-11'>
                 <Creative />
               </div>
+              <Footer />
             </Route>
             <Route path='/tech'>
               <div className='col-11'>
                 <Tech />
               </div>
+              <Footer />
             </Route>
             <Route path='/certification'>
               <div className='col-11'>
                 <Certifications />
               </div>
+              <Footer />
             </Route>
           </Switch>
         </Router>
       </div>
-      <Footer />
     </div>
   );
 }
