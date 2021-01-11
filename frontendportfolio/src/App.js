@@ -1,9 +1,12 @@
 import React from 'react'
 
-//Views
+// Views
 import Creative from './Views/Creative'
 import Tech from './Views/Tech'
 import Certifications from './Views/Certifications'
+import Home from './Views/Home'
+
+// Components
 import Sidebar from './Components/Sidebar'
 import Footer from './Components/footer'
 
@@ -17,12 +20,15 @@ import {
 function App() {
   return (
     <div className="App container">
-      <div className="row">
+      <div className="row App">
         <Router>
           <Sidebar />
           <Switch>
             <Route exact path='/'>
-              
+              <Home />
+            </Route>
+            <Route exact path='/Home'>
+              <Home />
             </Route>
             <Route path='/creative'>
               <div className='col-11'>

@@ -16,6 +16,7 @@ function Creative(){
     const urlCreativeSect = 'http://127.0.0.1:8000/api/creative/section/'
     
     let outputRender = []
+    let loading = <div class="spinner-border text-success m-5" role="status"><span class="visually-hidden">Loading...</span></div>
   
     //API CALLS
     useEffect( ()=> {
@@ -45,7 +46,7 @@ function Creative(){
 
     return(
       <div className='row justify-content-md-center'>
-          {outputRender}
+          {outputRender === [] ? loading : outputRender}
       </div>
     )
 }

@@ -12,6 +12,7 @@ function Certifications(){
     
     const urlCreative = 'http://127.0.0.1:8000/api/certification/card/'
     let showContent = null
+    let loading = <div class="spinner-border text-success m-5" role="status"><span class="visually-hidden">Loading...</span></div>
 
     //API CALLS
     useEffect( ()=> {
@@ -33,7 +34,7 @@ function Certifications(){
             <p className='text-secondary'>Click any of the certifications to get the full information</p>
           </div>
           <div className="row mt-5 justify-content-md-center">
-            {showContent === null ? 'Loading...' : showContent}
+            {showContent === null ? loading : showContent}
           </div>
           
         </div>
