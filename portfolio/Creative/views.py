@@ -27,6 +27,17 @@ class CreativeSectionView(APIView):
         content = {'please login': 'nothing to see here'}
         return Response(content, status=status.HTTP_404_NOT_FOUND)
 
+class EditCreativeSectionView(APIView):
+    def put(self, request, pk, format=None):
+        if request.user.is_authenticated:
+            obj = CreativeSectionModel.objects.get(id = pk)
+            serializer = CreativeSectionSerializer(obj, data = request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'You are not allowed to proceed with that action!'})
+
 class CreativeView(APIView):
     def get(self, request, format=None):
         data = CreativeModel.objects.all()
@@ -43,3 +54,13 @@ class CreativeView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         return Response({'You are not allowed to proceed with this action!'}, status=status.HTTP_404_NOT_FOUND)
 
+class EditCreativeView(APIView):
+    def put(self, request, pk, format=None):
+        if request.user.is_authenticated:
+            obj = CreativeModel.objects.get(id = pk)
+            serializer = CreativeSerializer(obj, data = request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'You are not allowed to proceed with that action!'})

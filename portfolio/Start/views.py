@@ -13,7 +13,7 @@ class StartView(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        if request.user.is_authenticated():
+        if request.user.is_authenticated:
             serializer = StartSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
@@ -21,3 +21,14 @@ class StartView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         context = {'You cant do that action my friend! '}
         return Response(context, status=status.HTTP_404_NOT_FOUND)
+
+class EditStartView(APIView):
+    def put(self, request, pk, format=None):
+        if request.user.is_authenticated:
+            obj = StartModel.objects.get(id = pk)
+            serializer = StartSerializer(obj, data = request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'You are not allowed to proceed with that action!'})

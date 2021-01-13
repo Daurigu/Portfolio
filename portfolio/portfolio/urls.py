@@ -20,11 +20,13 @@ import Start
 import Tech
 import Creative
 import Certifications
+import authentication
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/start/', include('Start.urls')),
     path('api/tech/', include('Tech.urls')),
     path('api/creative/', include('Creative.urls')),
-    path('api/certification/', include('Certifications.urls'))
+    path('api/certification/', include('Certifications.urls')),
+    path('api/', include('authentication.urls')),
 ]
