@@ -12,8 +12,8 @@ function Tech(){
   const [cards, setCard] = useState(null)
   const [sections, setSection] = useState(null)
   
-  const urlCreative = 'http://127.0.0.1:8000/api/tech/card/'
-  const urlCreativeSect = 'http://127.0.0.1:8000/api/tech/section/'
+  const urlCreative = 'http://127.0.0.1:8000/api/tech/card'
+  const urlCreativeSect = 'http://127.0.0.1:8000/api/tech/section'
   
   let outputRender = []
   let loading = <div class="spinner-border text-success m-5" role="status"><span class="visually-hidden">Loading...</span></div>

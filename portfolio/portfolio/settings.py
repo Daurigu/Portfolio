@@ -38,16 +38,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #Mine
+    #My Apps
     'Start',
     'Tech',
     'Creative',
     'Certifications',
+    'authentication',
 
     #Third party
     'rest_framework',
-    'corsheaders'
+    'rest_framework.authtoken',
+    'corsheaders',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

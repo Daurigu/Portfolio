@@ -5,4 +5,4 @@ from Start.models import StartModel
 class StartSerializer(serializers.ModelSerializer):
     class Meta:
         model = StartModel
-        fields = ['id', 'name', 'description']
+        fields = ['name', 'description']

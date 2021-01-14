@@ -1,10 +1,10 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 
 from Start.models import StartModel
 from Start.serializer import StartSerializer
-# Create your views here.
 
 class StartView(APIView):
     def get(self, request, format=None):
@@ -12,23 +12,24 @@ class StartView(APIView):
         serializer = StartSerializer(data, many=True)
         return Response(serializer.data)
 
+class AddStartview(APIView):
+    permission_classes = (IsAuthenticated,)
+
     def post(self, request, format=None):
-        if request.user.is_authenticated:
-            serializer = StartSerializer(data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        context = {'You cant do that action my friend! '}
-        return Response(context, status=status.HTTP_404_NOT_FOUND)
+        serializer = StartSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class EditStartView(APIView):
+    permission_classes = (IsAuthenticated,)
+
     def put(self, request, pk, format=None):
-        if request.user.is_authenticated:
-            obj = StartModel.objects.get(id = pk)
-            serializer = StartSerializer(obj, data = request.data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        return Response({'You are not allowed to proceed with that action!'})
+        obj = StartModel.objects.get(id = pk)
+        serializer = StartSerializer(obj, data = request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

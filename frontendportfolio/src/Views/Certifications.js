@@ -10,7 +10,7 @@ function Certifications(){
 
     const [card, setCard] = useState(null)
     
-    const urlCreative = 'http://127.0.0.1:8000/api/certification/card/'
+    const urlCreative = 'http://127.0.0.1:8000/api/certification/card'
     let showContent = null
     let loading = <div class="spinner-border text-success m-5" role="status"><span class="visually-hidden">Loading...</span></div>
 
