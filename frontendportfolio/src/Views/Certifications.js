@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import certificate from '../Images/certificate.jpg'
 
 //Third-Party
 import axios from 'axios'
@@ -23,7 +24,7 @@ function Certifications(){
 
     if (card){
       showContent = card.map( (card)=>{
-         return <Card image={card.image} name={card.name} description={card.description} link={card.link} type='2'/>
+         return <Card image={certificate} name={card.name} description={card.description} link={card.link} type='2'/>
       } )
     }
 
