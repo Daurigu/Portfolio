@@ -23,32 +23,39 @@ function App() {
       <div className="row App">
         <Router>
           <Sidebar />
+
           <Switch>
             <Route exact path='/'>
               <Home />
             </Route>
-            <Route exact path='/Home'>
+
+            <Route exact path='/home'>
               <Home />
             </Route>
+
             <Route path='/creative'>
               <div className='col-11'>
                 <Creative />
               </div>
               <Footer />
             </Route>
+
             <Route path='/tech'>
               <div className='col-11'>
                 <Tech />
               </div>
               <Footer />
             </Route>
+
             <Route path='/certification'>
               <div className='col-11'>
                 <Certifications />
               </div>
               <Footer />
             </Route>
+
           </Switch>
+
         </Router>
       </div>
     </div>

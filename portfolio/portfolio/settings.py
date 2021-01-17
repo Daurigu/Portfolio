@@ -73,7 +73,9 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'frontendportfolio/build')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,3 +142,7 @@ STATIC_URL = '/static/'
 
 #CORS_ORIGIN_WHITELIST = 'localhost:3000',
 CORS_ORIGIN_ALLOW_ALL = True
+
+STATICFILES_DIRS = [
+    os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'frontendportfolio/build/static'),
+]
