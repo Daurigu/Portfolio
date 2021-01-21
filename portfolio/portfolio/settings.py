@@ -20,13 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 with open('secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
-
-
+'''
+SECRET_KEY = os.getenv('SECRET_KEY')
+'''
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+#DEBUG = os.getenv('DEBUG')
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -77,7 +79,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'frontendportfolio/build')
+            #os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'frontendportfolio/build')
+            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -148,5 +151,6 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_ALLOW_ALL = True
 
 STATICFILES_DIRS = [
-    os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'frontendportfolio/build/static'),
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'build/static'),
 ]
+#print(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'build/static'))
